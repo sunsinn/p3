@@ -1,8 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-<a href = "lorem"<button type="button">Lorem Ipsum</button></a>
-<div id = "random">
-<a href = "random"<button type="button">Random User</button></a>
-</div>
+<p>A small suite of tools to aid with website development.</p>
+<p>Developed for <a href = "http://dwa15.com/">CSCIE-15 Dynamic Web Applications</a></p>
 @stop

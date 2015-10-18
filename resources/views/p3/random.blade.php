@@ -6,30 +6,38 @@
 @stop
 
 @section('content')
-Generate some random users here!
-<form action="/random" method="post">
-  <input type='hidden' name='_token' value='{{ csrf_token() }}'>
-   Number of users (between 1 and 30):
-   <input type="number" name="users" min="1" max="30"><br>
-   <input type="checkbox" name="mail" value="mail">
-   Email
-   <input type="checkbox" name="description" value="description">
-   Description <br>
-   <input type="submit" value="Get some users!">
+
+<form action="/random" method="post" class="form-horizontal">
+  <fieldset>
+      <legend>Generate some random users here!</legend>
+        <div>
+          <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+          Number of users (between 1 and 30):
+          <input type="text" name="users"><br>
+          <input type="checkbox" name="mail" value="mail">
+          Email
+          <input type="checkbox" name="description" value="description">
+          Description
+        </div>
+        <input type="submit" value="Get some users!">
+   </fieldset>
 </form>
+<br>
+
 
 @if ($_POST)
 <?php
     for ($i=0; $i<count($users); $i++) {
-      echo '<p>Name: '.$users[$i]['name'];
+      echo '<div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title">Name: '.$users[$i]['name'].'</h3></div>';
       if (!empty($users[$i]['email'])) {
           echo '<br>Email: '.$users[$i]['email'];
       }
       if (!empty($users[$i]['desc'])) {
           echo '<br>Description: '.$users[$i]['desc'];
       }
+      echo '</div>';
     }
 ?>
 @endif
-
+</div>
 @stop

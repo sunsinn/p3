@@ -14,3 +14,4 @@
 Route::controller('/','DevController');
 Route::post('/lorem', 'DevController@postLorem');
 Route::post('/random', 'DevController@postRandom');
+Route::post('/password', 'DevController@postPassword');

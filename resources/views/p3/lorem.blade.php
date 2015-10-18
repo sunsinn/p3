@@ -8,13 +8,18 @@
 
 @section('content')
 Generate Lorem Ipsum text for your layouts here!
-<form action="/lorem" method="post">
-  <input type='hidden' name='_token' value='{{ csrf_token() }}'>
-   Number of paragraphs (between 1 and 20):
-   <input type="text" name="para"><br>
-   <input type="submit" value="Get my text!">
+<form action="/lorem" method="post" class="form-horizontal">
+  <fieldset>
+    <legend>Generate Lorem Ipsum text for your layouts here!</legend>
+    <div>
+      <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+      Number of paragraphs (between 1 and 20):
+      <input type="text" name="para"><br>
+    </div>
+    <input type="submit" value="Get my text!">
+ </fieldset>
 </form>
-<p>
+<br>
 
 @if ($_POST)
 <?php
