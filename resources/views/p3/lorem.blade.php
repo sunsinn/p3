@@ -2,20 +2,24 @@
 
 
 @section('title')
-    Show book
-@stop
-
-
-{{--
-This `head` section will be yielded right before the closing </head> tag.
-Use it to add specific things that *this* View needs in the head,
-such as a page specific styesheets.
---}}
-@section('head')
-    <link href="/css/books/show.css" type='text/css' rel='stylesheet'>
+    Lorem Ipsum Generator
 @stop
 
 
 @section('content')
-<h1>Get all the books</h1>
+Generate Lorem Ipsum text for your layouts here!
+<form action="/p3/public/lorem" method="post">
+  <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+   Number of paragraphs (between 1 and 20):
+   <input type="text" name="para"><br>
+   <input type="submit" value="Get my text!">
+</form>
+<p>
+
+@if ($_POST)
+<?php
+  echo implode('<p>', $paragraphs);
+?>
+@endif
+
 @stop

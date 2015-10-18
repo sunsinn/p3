@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('p3.index');
-});
+Route::controller('/','DevController');
+Route::post('/p3/public/lorem', 'DevController@postLorem');
+Route::post('/p3/public/random', 'DevController@postRandom');
