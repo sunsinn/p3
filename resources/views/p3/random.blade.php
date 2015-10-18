@@ -22,10 +22,10 @@ Generate some random users here!
 <?php
     for ($i=0; $i<count($users); $i++) {
       echo '<p>Name: '.$users[$i]['name'];
-      if ($users[$i]['email']) {
+      if (!empty($users[$i]['email'])) {
           echo '<br>Email: '.$users[$i]['email'];
       }
-      if ($users[$i]['desc']) {
+      if (!empty($users[$i]['desc'])) {
           echo '<br>Description: '.$users[$i]['desc'];
       }
     }
