@@ -12,5 +12,5 @@
 */
 
 Route::controller('/','DevController');
-Route::post('/p3/public/lorem', 'DevController@postLorem');
-Route::post('/p3/public/random', 'DevController@postRandom');
+Route::post('/lorem', 'DevController@postLorem');
+Route::post('/random', 'DevController@postRandom');

@@ -7,7 +7,7 @@
 
 @section('content')
 Generate some random users here!
-<form action="/p3/public/random" method="post">
+<form action="/random" method="post">
   <input type='hidden' name='_token' value='{{ csrf_token() }}'>
    Number of users (between 1 and 30):
    <input type="number" name="users" min="1" max="30"><br>
