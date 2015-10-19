@@ -18,6 +18,8 @@
           Email
           <input type="checkbox" name="description" value="description">
           Description
+          <input type="checkbox" name="picture" value="picture">
+          User Pic
         </div>
         <input type="submit" value="Get some users!">
    </fieldset>
@@ -27,8 +29,15 @@
 
 @if ($_POST)
 <?php
+
+    echo count($users);
     for ($i=0; $i<count($users); $i++) {
-      echo '<div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title">Name: '.$users[$i]['name'].'</h3></div>';
+
+      echo '<div class="panel panel-success"><div class="panel-heading">';
+      if (!empty($users[$i]['image'])) {
+        echo '<img src="'.$users[$i]['image'].'" alt="bar Initialcon" />';
+      }
+      echo '<h3 class="panel-title">Name: '.$users[$i]['name'].'</h3></div>';
       if (!empty($users[$i]['email'])) {
           echo '<br>Email: '.$users[$i]['email'];
       }
