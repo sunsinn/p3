@@ -39,7 +39,6 @@
 @if ($_POST)
 <?php
 
-    echo count($users);
     for ($i=0; $i<count($users); $i++) {
 
       echo '<div class="panel panel-success"><div class="panel-heading">';
