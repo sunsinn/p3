@@ -14,7 +14,7 @@ Generate Lorem Ipsum text for your layouts here!
     <div>
       <input type='hidden' name='_token' value='{{ csrf_token() }}'>
       Number of paragraphs (between 1 and 20):
-      <input type="text" name="para"><br>
+      <input type="text" name="paragraphs"><br>
     </div>
     <input type="submit" value="Get my text!">
  </fieldset>

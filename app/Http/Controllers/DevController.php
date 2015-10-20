@@ -18,8 +18,9 @@ class DevController extends Controller
 
 	public function postLorem(Request $request)
 	{
-		$this->validate($request, ['para' => 'required|numeric|min:1|max:20', ]);
-		$n = $request->input('para');
+
+		$this->validate($request, ['paragraphs' => 'required|numeric|min:1|max:20', ]);
+		$n = $request->input('paragraphs');
 		$generator = new \Badcow\LoremIpsum\Generator();
 		$paragraphs = $generator->getParagraphs($n);
 		return view('p3.lorem')->with('paragraphs', $paragraphs);
