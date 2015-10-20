@@ -21,6 +21,14 @@ Generate Lorem Ipsum text for your layouts here!
 </form>
 <br>
 
+@if(count($errors) > 0)
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+@endif
+
 @if ($_POST)
 <?php
   echo implode('<p>', $paragraphs);

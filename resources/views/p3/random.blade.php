@@ -7,6 +7,7 @@
 
 @section('content')
 
+
 <form action="/random" method="post" class="form-horizontal">
   <fieldset>
       <legend>Generate some random users here!</legend>
@@ -25,6 +26,14 @@
    </fieldset>
 </form>
 <br>
+
+@if(count($errors) > 0)
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+@endif
 
 
 @if ($_POST)
